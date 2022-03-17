@@ -1,8 +1,10 @@
 $(document).ready(function () {
 
+
   $(document).on('click', '.btn.remove', function (event) {
     $(this).parent().parent().remove();
   });
+
 
   $(document).on('click', '.btn.add', function (event) {
     var item = $(this).parent().prev().prev().children('input').val();
@@ -14,10 +16,12 @@ $(document).ready(function () {
     + "<div class=\"quantity\">QTY <input type=\"number\"/></div>"
     + "<div><button class=\"btn remove\">Remove</button></div>"
     + "<div class=\"subtotal\">$--.--</div>");
-  })
+  });
+
+  
 
   $('body').on('input', '.item input', function () {
-    var totalPrice = 0;
+    var totalAll = 0;
     console.log('run');
 
     var itemPrice = parseFloat($(this).parent().prev().text().substring(1, 3));
@@ -25,13 +29,14 @@ $(document).ready(function () {
     var subTotalPrice = itemPrice * itemCount;
 
     $(this).parent().next().next().html("$" + subTotalPrice + ".00");
-    $('.subtotal').each(function (index, element) {
-      if(/\d/.test($(this).text())) {
-        totalPrice += parseFloat($(this).text.substring(1));
+    $(".subtotal").each(function (index, element) {
+      if (/\d/.test($(this).text())) { 
+        totalAll += parseFloat($(this).text().substring(1));
       }
     });
 
-    $('.totalcost').html("$" + totalPrice + ".00");
-  })
+    $(".totalprice").html("$" + totalAll +".00");
+  });
+  
 
 })
