@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="application.js"></script>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+  </head>
+  <body>
+    
+    <div class="container">
+      <div class="row">
+        <div class="title col-xs-12">
+         <h1>Shopping Cart</h1>
+        </div>
+      </div>
+    </div>
+    <div class="container" id="items">
+      <div class="row"> <!---first item---->
+        <div class="itemName col-xs-2">Salmon</div>
+        <div class="itemPrice col-xs-2">$60.00</div>
+        <div class="quantity col-xs-4">
+          QTY <input type="number"/>
+        </div>
+        <div class="col-xs-1">
+          <button class="btn remove">Remove</button>
+        </div>
+        <div class="subtotal col-xs-3">$--.--</div>
+      </div>
+      <div class="row">
+        <div class="itemName col-xs-2">Tuna</div>
+        <div class="itemPrice col-xs-2">$50.00</div>
+        <div class="quantity col-xs-4">
+          QTY <input type="number"/>
+        </div>
+        <div class="col-xs-1">
+          <button class="btn remove">Remove</button>
+        </div>
+        <div class="subtotal col-xs-3">$--.--</div>
+      </div>
+      <div class="row"> 
+        <div class="itemName col-xs-2">Carp</div>
+        <div class="itemPrice col-xs-2">$40.00</div>
+        <div class="quantity col-xs-4">
+          QTY <input type="number"/>
+        </div>
+        <div class="col-xs-1">
+          <button class="btn remove">Remove</button>
+        </div>
+        <div class="subtotal col-xs-3">$--.--</div>
+      </div>
+      <div class="row"> 
+        <div class="itemName col-xs-2">Pork</div>
+        <div class="itemPrice col-xs-2">$50.00</div>
+        <div class="quantity col-xs-4">
+          QTY <input type="number"/>
+        </div>
+        <div class="col-xs-1">
+          <button class="btn remove">Remove</button>
+        </div>
+        <div class="subtotal col-xs-3">$--.--</div>
+      </div>
+      <div class="row"> 
+        <div class="itemName col-xs-2">Beef</div>
+        <div class="itemPrice col-xs-2">$40.00</div>
+        <div class="quantity col-xs-4">
+          QTY <input type="number"/>
+        </div>
+        <div class="col-xs-1">
+          <button class="btn remove">Remove</button>
+        </div>
+        <div class="subtotal col-xs-3">$--.--</div>
+      </div>
+      <div class="row"> 
+        <div class="itemName col-xs-2">Chicken</div>
+        <div class="itemPrice col-xs-2">$25.00</div>
+        <div class="quantity col-xs-4">
+          QTY <input type="number"/>
+        </div>
+        <div class="col-xs-1">
+          <button class="btn remove">Remove</button>
+        </div>
+        <div class="subtotal col-xs-3">$--.--</div>
+      </div>
+      <div class="row"> 
+        <div class="itemName col-xs-2">Cereal</div>
+        <div class="itemPrice col-xs-2">$45.00</div>
+        <div class="quantity col-xs-4">
+          QTY <input type="number"/>
+        </div>
+        <div class="col-xs-1">
+          <button class="btn remove">Remove</button>
+        </div>
+        <div class="subtotal col-xs-3">$--.--</div>
+      </div>
+      <div class="row">
+        <div class="itemName col-xs-2">Milk</div>
+        <div class="itemPrice col-xs-2">$20.00</div>
+        <div class="quantity col-xs-4">
+          QTY <input type="number"/>
+        </div>
+        <div class="col-xs-1">
+          <button class="btn remove">Remove</button>
+        </div>
+        <div class="subtotal col-xs-3">$--.--</div>
+      </div>
+      <div class="row">
+        <div class="itemName col-xs-2">Sugar</div>
+        <div class="itemPrice col-xs-2">$10.00</div>
+        <div class="quantity col-xs-4">
+          QTY <input type="number"/>
+        </div>
+        <div class="col-xs-1">
+          <button class="btn remove">Remove</button>
+        </div>
+        <div class="subtotal col-xs-3">$--.--</div>
+      </div>
+      <div class="row addItem"> <!---Add New Item---->
+        <div class="col-xs-2">
+          <input class="addName" placeholder="apple"/>
+        </div>
+        <div class="col-xs-2">
+          <input class="addPrice" placeholder="$30.00"/>
+        </div>
+        <div class="col-xs-2">
+          <button class="btn add">Add</button>
+        </div>
+      </div>
+      <div class="row" id="total"> <!---Total-->
+       <div class="col-xs-12">
+         <h1>Total Price</h1>
+         <div class="totalcost">$--.--</div>
+       </div>
+      </div>
+    </div>
+  </body>
+</html>
