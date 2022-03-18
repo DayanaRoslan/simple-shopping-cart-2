@@ -3,6 +3,7 @@ $(document).ready(function () {
 
   $(document).on('click', '.btn.remove', function (event) {
     $(this).parent().parent().remove();
+
   });
 
 
@@ -11,14 +12,13 @@ $(document).ready(function () {
     var price = $(this).parent().prev().children('input').val();
 
     $(this).parent().parent().before(" <div class=\"row item\" style=\"display: flex; justify-content: space-between;\">" 
-    + "<div class=\"itemName\">" + item + "</div>"
-    + "<div class=\"itemPrice\">" + price +".00</div>"
-    + "<div class=\"quantity\">QTY <input type=\"number\"/></div>"
-    + "<div><button class=\"btn remove\">Remove</button></div>"
-    + "<div class=\"subtotal\">$--.--</div>");
+    + "<div class=\"itemName col-xs-2\">" + item + "</div>"
+    + "<div class=\"itemPrice col-xs-2\" col-xs-2>" + price +".00</div>"
+    + "<div class=\"quantity col-xs-4\">QTY <input type=\"number\"/></div>"
+    + "<div class=\"col-xs-2\"><button class=\"btn remove\">Remove</button></div>"
+    + "<div class=\"subtotal col-xs-2\">$--.--</div>");
   });
 
-  
 
   $('body').on('input', '.item input', function () {
     var totalAll = 0;
@@ -29,14 +29,17 @@ $(document).ready(function () {
     var subTotalPrice = itemPrice * itemCount;
 
     $(this).parent().next().next().html("$" + subTotalPrice + ".00");
-    $(".subtotal").each(function (index, element) {
+
+     $(".subtotal").each(function (index, element) {
       if (/\d/.test($(this).text())) { 
         totalAll += parseFloat($(this).text().substring(1));
       }
-    });
-
-    $(".totalprice").html("$" + totalAll +".00");
+     });
+    
+    
+     $(".totalprice").html("$" + totalAll +".00");
   });
-  
+
+
 
 })
