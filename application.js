@@ -11,7 +11,7 @@ $(document).ready(function () {
     var item = $(this).parent().prev().prev().children('input').val();
     var price = $(this).parent().prev().children('input').val();
 
-    $(this).parent().parent().before(" <div class=\"row item\" style=\"display: flex;\">" 
+    $(this).parent().parent().before(" <div class=\"row item\" style=\"display: flex; justify-content: space-around;\">" 
     + "<div class=\"itemName col-xs-2\">" + item + "</div>"
     + "<div class=\"itemPrice col-xs-2\" col-xs-2>" + price +".00</div>"
     + "<div class=\"quantity col-xs-4\">QTY <input type=\"number\"/></div>"
