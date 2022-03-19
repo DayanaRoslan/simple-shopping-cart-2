@@ -15,7 +15,7 @@ $(document).ready(function () {
 
     $(this).parent().parent().before(" <div class=\"row item\" style=\"display: flex; justify-content: space-around;\">" 
     + "<div class=\"itemName col-xs-2\">" + item + "</div>"
-    + "<div class=\"itemPrice col-xs-2\" col-xs-2>" + price +".00</div>"
+    + "<div class=\"itemPrice col-xs-2\" col-xs-2>" + "$" + price +".00</div>"
     + "<div class=\"quantity col-xs-4\">QTY <input type=\"number\"/></div>"
     + "<div class=\"col-xs-2\"><button class=\"btn remove\">Remove</button></div>"
     + "<div class=\"subtotal col-xs-2\">$--.--</div>");
