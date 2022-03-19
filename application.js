@@ -3,8 +3,9 @@ $(document).ready(function () {
 
   $(document).on('click', '.btn.remove', function (event) {
     $(this).parent().parent().remove();
-    
+
     calcTotal();
+
   });
 
 
@@ -32,10 +33,12 @@ $(document).ready(function () {
     
     
      $(".totalprice").html("$" + totalAll +".00");
+    
   }
 
 
   $('body').on('input', '.item input', function () {
+    var totalAll = 0;
     console.log('run');
 
     var itemPrice = parseFloat($(this).parent().prev().text().substring(1, 3));
@@ -43,6 +46,8 @@ $(document).ready(function () {
     var subTotalPrice = itemPrice * itemCount;
 
     $(this).parent().next().next().html("$" + subTotalPrice + ".00");
+
+    calcTotal();
 
   });
 
