@@ -4,8 +4,6 @@ $(document).ready(function () {
   $(document).on('click', '.btn.remove', function (event) {
     $(this).parent().parent().remove();
 
-    calculateTotal();
-
   });
 
 
@@ -13,7 +11,7 @@ $(document).ready(function () {
     var item = $(this).parent().prev().prev().children('input').val();
     var price = $(this).parent().prev().children('input').val();
 
-    $(this).parent().parent().before("<div class=\"row item\">" 
+    $(this).parent().parent().before(" <div class=\"row item\" style=\"display: flex; justify-content: space-around;\">" 
     + "<div class=\"itemName col-xs-2\">" + item + "</div>"
     + "<div class=\"itemPrice col-xs-2\" col-xs-2>" + price +".00</div>"
     + "<div class=\"quantity col-xs-4\">QTY <input type=\"number\"/></div>"
@@ -22,10 +20,15 @@ $(document).ready(function () {
   });
 
 
-  var calculateTotal = function () {
+  $('body').on('input', '.item input', function () {
     var totalAll = 0;
+    console.log('run');
 
-    
+    var itemPrice = parseFloat($(this).parent().prev().text().substring(1, 3));
+    var itemCount = $(this).val();
+    var subTotalPrice = itemPrice * itemCount;
+
+    $(this).parent().next().next().html("$" + subTotalPrice + ".00");
 
      $(".subtotal").each(function (index, element) {
       if (/\d/.test($(this).text())) { 
@@ -35,20 +38,6 @@ $(document).ready(function () {
     
     
      $(".totalprice").html("$" + totalAll +".00");
-  }
-
-  $(document).on('input', '.item input', function () {
-    console.log('run');
-
-
-    var itemPrice = parseFloat($(this).parent().prev().text().substring(1, 3));
-    var itemCount = $(this).val();
-    var subTotalPrice = itemPrice * itemCount;
-
-    $(this).parent().next().next().html("$" + subTotalPrice + ".00");
-    
-    calculateTotal();
-    
   });
 
 
