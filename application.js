@@ -20,8 +20,21 @@ $(document).ready(function () {
   });
 
 
-  $('body').on('input', '.item input', function () {
+  var calcTotal = function () {
     var totalAll = 0;
+
+    $(".subtotal").each(function (index, element) {
+      if (/\d/.test($(this).text())) { 
+        totalAll += parseFloat($(this).text().substring(1));
+      }
+     });
+    
+    
+     $(".totalprice").html("$" + totalAll +".00");
+  }
+
+
+  $('body').on('input', '.item input', function () {
     console.log('run');
 
     var itemPrice = parseFloat($(this).parent().prev().text().substring(1, 3));
@@ -30,16 +43,6 @@ $(document).ready(function () {
 
     $(this).parent().next().next().html("$" + subTotalPrice + ".00");
 
-     $(".subtotal").each(function (index, element) {
-      if (/\d/.test($(this).text())) { 
-        totalAll += parseFloat($(this).text().substring(1));
-      }
-     });
-    
-    
-     $(".totalprice").html("$" + totalAll +".00");
   });
-
-
 
 })
