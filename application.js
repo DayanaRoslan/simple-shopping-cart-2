@@ -3,7 +3,8 @@ $(document).ready(function () {
 
   $(document).on('click', '.btn.remove', function (event) {
     $(this).parent().parent().remove();
-
+    
+    calcTotal();
   });
 
 
