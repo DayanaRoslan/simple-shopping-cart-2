@@ -38,7 +38,6 @@ $(document).ready(function () {
 
 
   $('body').on('input', '.item input', function () {
-    var totalAll = 0;
     console.log('run');
 
     var itemPrice = parseFloat($(this).parent().prev().text().substring(1, 3));
